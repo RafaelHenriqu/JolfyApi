@@ -1,21 +1,25 @@
 const App = require("express")()
-const Variaveis = require("./Variaveis")
+const Texts = require("./Json/Texts.json")
 
 
 App.get("/Series",(req,res)=>{
-    res.send(Variaveis.Series)
+    res.send(Texts.Series)
 })
 
 App.get("/Curiosidades",(req,res)=>{
-    res.send(Variaveis.Curiosidades)
+    res.send(Texts.Curiosidades)
 })
 
 App.get("/Piadas",(req,res)=>{
-    res.send(Variaveis.Piadas)
+    res.send(Texts.Piadas)
 })
 
 App.get("/Dicas",(req,res)=>{
-    res.send(Variaveis.Dicas)
+    res.send(Texts.Dicas)
+})
+
+App.get("/",(req,res)=>{
+    res.send(Texts)
 })
 
 App.listen(5000,()=>{
